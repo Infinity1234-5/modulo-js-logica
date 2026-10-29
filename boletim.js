@@ -51,21 +51,45 @@
 
 
 
-const media = [8, 5, 6, 5, 9.2, 4, 8]
-const nomes = ["Gabriel", "Jurandir", "Jorge", "Joao", "Jurema", "Joselvan"]
+// const media = [8, 5, 6, 5, 9.2, 4, 8]
+// const nomes = ["Gabriel", "Jurandir", "Jorge", "Joao", "Jurema", "Joselvan"]
 
-console.log("Aluno: "+ nomes[3] + " Media: "+ media[3])
-for (let i = 0; i < media.length; i++) {
-   if(media[i]>= 7){
-     console.log(nomes[i] + " Aprovado")
-   }else{
-    console.log(nomes[i] + " Reprovado")
-   }
+// console.log("Aluno: "+ nomes[3] + " Media: "+ media[3])
+// for (let i = 0; i < media.length; i++) {
+//    if(media[i]>= 7){
+//      console.log(nomes[i] + " Aprovado")
+//    }else{
+//     console.log(nomes[i] + " Reprovado")
+//    }
     
+// }
+// let soma = 0
+// if (media >= mediaescola){
+//     console.log("Aprovado");
+// //}else {
+//     console.log("Reprovado");
+// }
+// for (let i = 0; i < media.length; index++) {
+
+ 
+const prompt = require("prompt-sync")()
+const medias = []
+let input;
+while (input != -1){
+    input = Number(prompt("Próxima média: "))
+    if(input >= 0){
+        medias.push(input)
+    }
 }
 
-if (media >= mediaescola){
-    console.log("Aprovado");
-}else {
-    console.log("Reprovado");
+let soma = 0
+let aprovados = 0
+for (let i = 0; i < medias.length; i++) {
+   soma = soma + medias[i]
+  
+   if(medias[i]>=7){
+    aprovados++
+   }
 }
+console.log("Aprovados: " + aprovados);
+console.log("Média da turma: " + (soma/ medias.length).toFixed(2));
